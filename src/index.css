@@ -1,0 +1,35 @@
+
+:root {
+  --bs-primary: #0056D2;
+  --bg-primary: #F2F3FE;
+  --bs-primary-rgb: 0, 86, 210;
+  --bs-secondary: #515f74;
+  --bs-tertiary: #822800;
+  --surface-container-low: #f8fafc;
+  --surface-container-lowest: #ffffff;
+  --on-surface: #1e293b;
+  --on-surface-variant: #64748b;
+  --outline-variant: #e2e8f0;
+  --primary-blue: #0040a1;
+
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--surface-container-low);
+  color: var(--on-surface);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-headline {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+}

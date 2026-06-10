@@ -1,0 +1,31 @@
+.task_item {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.task_item:hover {
+    border-color: var(--bs-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-size: 50px;
+}
+
+.stat_card {
+    border: none;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.table{
+    table-layout: fixed;
+    border-collapse: collapse;
+}
