@@ -7,7 +7,11 @@ const scoreService = {
 
     getTopGroup: async (group, limit) => {
         return await axiosClient.get(_url + `/getListTopGroup?group=${group}&limit=${limit}`)
-    }
+    },
+
+    getDetailScores: async (sbd) => {
+        return await axiosClient.get(_url + `/check?sbd=${sbd}`)
+    },
 }
 
 export default scoreService

@@ -136,7 +136,6 @@ const DashBoard = () => {
     return (
         <DefaultLayout>
             <main className="container-fluid p-4 p-lg-5">
-                {/* Dashboard View*/}
                 <section>
                     <div className="mb-5">
                         <p

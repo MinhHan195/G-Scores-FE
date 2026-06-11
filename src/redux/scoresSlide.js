@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const scoresSlide = createSlice({
-    name: 'toast',
+    name: 'scores',
     initialState: {
+        detailScores: {},
         statistics: {},
         topGroupA: {},
         topGroupA1: {},
@@ -13,6 +14,10 @@ const scoresSlide = createSlice({
 
     },
     reducers: {
+        setDetailScores: (state, action) => {
+            const data = action.payload || {}
+            state.detailScores = data;
+        },
         setSatistics: (state, action) => {
             const data = action.payload || {}
             state.statistics = data;
@@ -44,6 +49,6 @@ const scoresSlide = createSlice({
     },
 });
 
-export const { setSatistics, setTopGroupA, setTopGroupA1, setTopGroupB, setTopGroupC, setTopGroupD, setType } = scoresSlide.actions;
+export const { setDetailScores, setSatistics, setTopGroupA, setTopGroupA1, setTopGroupB, setTopGroupC, setTopGroupD, setType } = scoresSlide.actions;
 
 export default scoresSlide.reducer;
