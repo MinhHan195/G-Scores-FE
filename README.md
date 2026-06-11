@@ -10,4 +10,4 @@ B3: Chạy lệnh 'npm run dev' để khởi chạy FrontEnd
 
 ### Lưu ý:
 
-Dự án được xây dựng trên Nodejs verion 20.19.1 và NPM version 10.8.2
+Dự án được xây dựng trên Nodejs verion 20.19.1, NPM version 10.8.2 và Reactjs version 19.2.4
