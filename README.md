@@ -6,7 +6,9 @@ B1: Clone code bằng link github: 'https://github.com/MinhHan195/G-Scores-FE.gi
 
 B2: Chạy lệnh 'npm install' để cài đặt thư viện
 
-B3: Chạy lệnh 'npm run dev' để khởi chạy FrontEnd
+B3: Chỉnh lại url kết nối BE tại '.env'
+
+B4: Chạy lệnh 'npm run dev' để khởi chạy FrontEnd
 
 ### Lưu ý:
 
