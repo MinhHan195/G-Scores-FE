@@ -10,7 +10,8 @@ const scoresSlide = createSlice({
         topGroupB: {},
         topGroupC: {},
         topGroupD: {},
-        type: "Group A"
+        type: "Group A",
+        searchString: ''
 
     },
     reducers: {
@@ -22,33 +23,25 @@ const scoresSlide = createSlice({
             const data = action.payload || {}
             state.statistics = data;
         },
-        setTopGroupA: (state, action) => {
+        setTopGroup: (state, action) => {
             const data = action.payload || {}
-            state.topGroupA = data;
-        },
-        setTopGroupA1: (state, action) => {
-            const data = action.payload || {}
-            state.topGroupA1 = data;
-        },
-        setTopGroupB: (state, action) => {
-            const data = action.payload || {}
-            state.topGroupB = data;
-        },
-        setTopGroupC: (state, action) => {
-            const data = action.payload || {}
-            state.topGroupC = data;
-        },
-        setTopGroupD: (state, action) => {
-            const data = action.payload || {}
-            state.topGroupD = data;
+            state.topGroupA = data['group_a'];
+            state.topGroupA1 = data['group_a1'];
+            state.topGroupB = data['group_b'];
+            state.topGroupC = data['group_c'];
+            state.topGroupD = data['group_d'];
         },
         setType: (state, action) => {
             const data = action.payload || {}
             state.type = data;
         },
+        setSearchString: (state, action) => {
+            const data = action.payload || {}
+            state.searchString = data
+        }
     },
 });
 
-export const { setDetailScores, setSatistics, setTopGroupA, setTopGroupA1, setTopGroupB, setTopGroupC, setTopGroupD, setType } = scoresSlide.actions;
+export const { setDetailScores, setSatistics, setTopGroup, setType, setSearchString } = scoresSlide.actions;
 
 export default scoresSlide.reducer;

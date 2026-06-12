@@ -5,8 +5,8 @@ const scoreService = {
         return await axiosClient.get(_url + '/getReports')
     },
 
-    getTopGroup: async (group, limit) => {
-        return await axiosClient.get(_url + `/getListTopGroup?group=${group}&limit=${limit}`)
+    getTopGroup: async (limit) => {
+        return await axiosClient.get(_url + `/getListTopGroup?limit=${limit}`)
     },
 
     getDetailScores: async (sbd) => {

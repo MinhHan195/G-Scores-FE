@@ -31,7 +31,9 @@ const DashBoard = () => {
         try {
             if (statistics.length > 0) return;
             const result = await scoreService.getReports();
-            dispatch(setSatistics(result));
+            if (result) {
+                dispatch(setSatistics(result));
+            }
         } catch (err) {
             console.log(err);
         }
@@ -122,10 +124,6 @@ const DashBoard = () => {
     };
 
     useEffect(() => {
-        console.log(listStatistics);
-    }, [listStatistics]);
-
-    useEffect(() => {
         fetchData();
     }, []);
 
@@ -146,23 +144,36 @@ const DashBoard = () => {
                         <p>Scores Statistics </p>
                     </div>
                     <div className="row g-4 mb-5">
-                        {listStatistics.map((element, idx) => {
-                            return (
-                                <div className="col-lg-4" key={idx}>
-                                    <div className={style.stat_card}>
-                                        <h2 className="h6 fw-bold mb-4">
-                                            {element.subject}
-                                        </h2>
-                                        <div style={{ height: "250px" }}>
-                                            <Doughnut
-                                                data={element.data}
-                                                options={element.option}
-                                            />
+                        {statistics.length !== undefined ? (
+                            listStatistics.map((element, idx) => {
+                                return (
+                                    <div className="col-lg-4" key={idx}>
+                                        <div className={style.stat_card}>
+                                            <h2 className="h6 fw-bold mb-4">
+                                                {element.subject}
+                                            </h2>
+                                            <div style={{ height: "250px" }}>
+                                                <Doughnut
+                                                    data={element.data}
+                                                    options={element.option}
+                                                />
+                                            </div>
                                         </div>
                                     </div>
+                                );
+                            })
+                        ) : (
+                            <div className={`${style.loading_container}`}>
+                                <div
+                                    className="spinner-border text-primary"
+                                    role="status"
+                                >
+                                    <span className="visually-hidden">
+                                        Loading...
+                                    </span>
                                 </div>
-                            );
-                        })}
+                            </div>
+                        )}
                     </div>
                 </section>
             </main>

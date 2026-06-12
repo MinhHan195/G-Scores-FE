@@ -4,13 +4,7 @@ import DefaultLayout from "../../layouts/defaultLayout/defaultLayout";
 import scoreService from "../../service/scoreService";
 import { useSelector, useDispatch } from "react-redux";
 import SortBtn from "../../components/Elements/SortBtn/SortBtn";
-import {
-    setTopGroupA,
-    setTopGroupA1,
-    setTopGroupB,
-    setTopGroupC,
-    setTopGroupD,
-} from "../../redux/scoresSlide";
+import { setTopGroup } from "../../redux/scoresSlide";
 import { useEffect, useMemo } from "react";
 const TopGroup = () => {
     const dispatch = useDispatch();
@@ -40,25 +34,15 @@ const TopGroup = () => {
                 groupD.length > 0
             )
                 return;
-            const groupAResult = await scoreService.getTopGroup("group_a", 10);
-            dispatch(setTopGroupA(groupAResult));
-            const groupA1Result = await scoreService.getTopGroup(
-                "group_a1",
-                10,
-            );
-            dispatch(setTopGroupA1(groupA1Result));
-            const groupBResult = await scoreService.getTopGroup("group_b", 10);
-            dispatch(setTopGroupB(groupBResult));
-            const groupCResult = await scoreService.getTopGroup("group_c", 10);
-            dispatch(setTopGroupC(groupCResult));
-            const groupDResult = await scoreService.getTopGroup("group_d", 10);
-            dispatch(setTopGroupD(groupDResult));
+            const result = await scoreService.getTopGroup(10);
+            if (result) {
+                dispatch(setTopGroup(result));
+            }
             return;
         } catch (error) {
             console.log(error);
         }
     };
-
     useEffect(() => {
         fetchData();
     }, []);
@@ -80,79 +64,92 @@ const TopGroup = () => {
                                 <SortBtn />
                             </div>
                             <div id="recent-tasks-container">
-                                {list && Array.isArray(list)
-                                    ? // eslint-disable-next-line no-unused-vars
-                                      list.map((key, idx) => {
-                                          return (
-                                              <div
-                                                  className={`${style.task_item} shadow-sm`}
-                                                  key={key.data[0]}
-                                              >
-                                                  <div className="d-flex align-items-center justify-content-between w-100">
-                                                      <div
-                                                          className={`${style.list_scores}`}
-                                                      >
-                                                          <div>
-                                                              <p className="text-center text-primary">
-                                                                  <b>SBD</b>
-                                                              </p>
-                                                              <p className="text-center">
-                                                                  {key.data[0]}
-                                                              </p>
-                                                          </div>
-                                                          <div>
-                                                              <p className="text-center text-primary">
-                                                                  <b>
-                                                                      {
-                                                                          key
-                                                                              .subjects[0]
-                                                                      }
-                                                                  </b>
-                                                              </p>
-                                                              <p className="text-center">
-                                                                  {key.data[1]}
-                                                              </p>
-                                                          </div>
-                                                          <div>
-                                                              <p className="text-center text-primary">
-                                                                  <b>
-                                                                      {
-                                                                          key
-                                                                              .subjects[1]
-                                                                      }
-                                                                  </b>
-                                                              </p>
-                                                              <p className="text-center">
-                                                                  {key.data[2]}
-                                                              </p>
-                                                          </div>
-                                                          <div>
-                                                              <p className="text-center text-primary">
-                                                                  <b>
-                                                                      {
-                                                                          key
-                                                                              .subjects[2]
-                                                                      }
-                                                                  </b>
-                                                              </p>
-                                                              <p className="text-center">
-                                                                  {key.data[3]}
-                                                              </p>
-                                                          </div>
-                                                          <div>
-                                                              <p className="text-center text-primary-emphasis">
-                                                                  <b>Tổng</b>
-                                                              </p>
-                                                              <p className="text-center text-primary-emphasis">
-                                                                  {key.data[4]}
-                                                              </p>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          );
-                                      })
-                                    : null}
+                                {list && Array.isArray(list) ? (
+                                    // eslint-disable-next-line no-unused-vars
+                                    list.map((key, idx) => {
+                                        return (
+                                            <div
+                                                className={`${style.task_item} shadow-sm`}
+                                                key={key.data[0]}
+                                            >
+                                                <div className="d-flex align-items-center justify-content-between w-100">
+                                                    <div
+                                                        className={`${style.list_scores}`}
+                                                    >
+                                                        <div>
+                                                            <p className="text-center text-primary">
+                                                                <b>SBD</b>
+                                                            </p>
+                                                            <p className="text-center">
+                                                                {key.data[0]}
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p className="text-center text-primary">
+                                                                <b>
+                                                                    {
+                                                                        key
+                                                                            .subjects[0]
+                                                                    }
+                                                                </b>
+                                                            </p>
+                                                            <p className="text-center">
+                                                                {key.data[1]}
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p className="text-center text-primary">
+                                                                <b>
+                                                                    {
+                                                                        key
+                                                                            .subjects[1]
+                                                                    }
+                                                                </b>
+                                                            </p>
+                                                            <p className="text-center">
+                                                                {key.data[2]}
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p className="text-center text-primary">
+                                                                <b>
+                                                                    {
+                                                                        key
+                                                                            .subjects[2]
+                                                                    }
+                                                                </b>
+                                                            </p>
+                                                            <p className="text-center">
+                                                                {key.data[3]}
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p className="text-center text-primary-emphasis">
+                                                                <b>Tổng</b>
+                                                            </p>
+                                                            <p className="text-center text-primary-emphasis">
+                                                                {key.data[4]}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })
+                                ) : (
+                                    <div
+                                        className={`${style.loading_container}`}
+                                    >
+                                        <div
+                                            className="spinner-border text-primary"
+                                            role="status"
+                                        >
+                                            <span className="visually-hidden">
+                                                Loading...
+                                            </span>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>
