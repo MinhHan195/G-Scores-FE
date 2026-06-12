@@ -89,111 +89,62 @@ const TopGroup = () => {
                                                   key={key.data[0]}
                                               >
                                                   <div className="d-flex align-items-center justify-content-between w-100">
-                                                      {/* <table
-                                                          className={`w-100 ${style.table}`}
-                                                      >
-                                                          <tbody>
-                                                              <tr>
-                                                                  <th className="mb-4 text-center">
-                                                                      SBD
-                                                                  </th>
-                                                                  <th className="mb-4 text-center">
-                                                                      {
-                                                                          key
-                                                                              .subjects[0]
-                                                                      }
-                                                                  </th>
-                                                                  <th className="mb-4 text-center">
-                                                                      {
-                                                                          key
-                                                                              .subjects[1]
-                                                                      }
-                                                                  </th>
-                                                                  <th className="mb-4 text-center">
-                                                                      {
-                                                                          key
-                                                                              .subjects[2]
-                                                                      }
-                                                                  </th>
-                                                                  <th className="mb-4 text-center">
-                                                                      Tổng
-                                                                  </th>
-                                                              </tr>
-                                                              <tr>
-                                                                  <td className="mb-4 text-center">
-                                                                      {
-                                                                          key
-                                                                              .data[0]
-                                                                      }
-                                                                  </td>
-                                                                  <td className="mb-4 text-center">
-                                                                      {
-                                                                          key
-                                                                              .data[1]
-                                                                      }
-                                                                  </td>
-                                                                  <td className="mb-4 text-center">
-                                                                      {
-                                                                          key
-                                                                              .data[2]
-                                                                      }
-                                                                  </td>
-                                                                  <td className="mb-4 text-center">
-                                                                      {
-                                                                          key
-                                                                              .data[3]
-                                                                      }
-                                                                  </td>
-                                                                  <td className="mb-4 text-center">
-                                                                      {
-                                                                          key
-                                                                              .data[4]
-                                                                      }
-                                                                  </td>
-                                                              </tr>
-                                                          </tbody>
-                                                      </table> */}
                                                       <div
                                                           className={`${style.list_scores}`}
                                                       >
                                                           <div>
-                                                              <p className="text-center">
+                                                              <p className="text-center text-primary">
                                                                   <b>SBD</b>
                                                               </p>
                                                               <p className="text-center">
-                                                                  26020938
+                                                                  {key.data[0]}
                                                               </p>
                                                           </div>
                                                           <div>
-                                                              <p className="text-center">
-                                                                  <b>Toán</b>
+                                                              <p className="text-center text-primary">
+                                                                  <b>
+                                                                      {
+                                                                          key
+                                                                              .subjects[0]
+                                                                      }
+                                                                  </b>
                                                               </p>
                                                               <p className="text-center">
-                                                                  9.60
-                                                              </p>
-                                                          </div>
-                                                          <div>
-                                                              <p className="text-center">
-                                                                  <b>Vật lí</b>
-                                                              </p>
-                                                              <p className="text-center">
-                                                                  10.00
+                                                                  {key.data[1]}
                                                               </p>
                                                           </div>
                                                           <div>
-                                                              <p className="text-center">
-                                                                  <b>Hóa học</b>
+                                                              <p className="text-center text-primary">
+                                                                  <b>
+                                                                      {
+                                                                          key
+                                                                              .subjects[1]
+                                                                      }
+                                                                  </b>
                                                               </p>
                                                               <p className="text-center">
-                                                                  10.00
+                                                                  {key.data[2]}
                                                               </p>
                                                           </div>
                                                           <div>
+                                                              <p className="text-center text-primary">
+                                                                  <b>
+                                                                      {
+                                                                          key
+                                                                              .subjects[2]
+                                                                      }
+                                                                  </b>
+                                                              </p>
                                                               <p className="text-center">
+                                                                  {key.data[3]}
+                                                              </p>
+                                                          </div>
+                                                          <div>
+                                                              <p className="text-center text-primary-emphasis">
                                                                   <b>Tổng</b>
                                                               </p>
-                                                              <p className="text-center">
-                                                                  29.60
+                                                              <p className="text-center text-primary-emphasis">
+                                                                  {key.data[4]}
                                                               </p>
                                                           </div>
                                                       </div>
