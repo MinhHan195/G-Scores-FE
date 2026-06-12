@@ -1,6 +1,10 @@
 # G-Scores-FE
 
-HƯỚNG DẪN CÀI ĐẶT
+## Link deploy
+
+Bạn có thể truy cập trang web qua link sau: [https://g-scores-fe-pied.vercel.app/](https://g-scores-fe-pied.vercel.app/)
+
+## HƯỚNG DẪN CÀI ĐẶT
 
 B1: Clone code bằng link github: 'https://github.com/MinhHan195/G-Scores-FE.git'
 

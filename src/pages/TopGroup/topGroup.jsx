@@ -88,8 +88,8 @@ const TopGroup = () => {
                                                   className={`${style.task_item} shadow-sm`}
                                                   key={key.data[0]}
                                               >
-                                                  <div className="d-flex align-items-center justify-content-between">
-                                                      <table
+                                                  <div className="d-flex align-items-center justify-content-between w-100">
+                                                      {/* <table
                                                           className={`w-100 ${style.table}`}
                                                       >
                                                           <tbody>
@@ -152,7 +152,51 @@ const TopGroup = () => {
                                                                   </td>
                                                               </tr>
                                                           </tbody>
-                                                      </table>
+                                                      </table> */}
+                                                      <div
+                                                          className={`${style.list_scores}`}
+                                                      >
+                                                          <div>
+                                                              <p className="text-center">
+                                                                  <b>SBD</b>
+                                                              </p>
+                                                              <p className="text-center">
+                                                                  26020938
+                                                              </p>
+                                                          </div>
+                                                          <div>
+                                                              <p className="text-center">
+                                                                  <b>Toán</b>
+                                                              </p>
+                                                              <p className="text-center">
+                                                                  9.60
+                                                              </p>
+                                                          </div>
+                                                          <div>
+                                                              <p className="text-center">
+                                                                  <b>Vật lí</b>
+                                                              </p>
+                                                              <p className="text-center">
+                                                                  10.00
+                                                              </p>
+                                                          </div>
+                                                          <div>
+                                                              <p className="text-center">
+                                                                  <b>Hóa học</b>
+                                                              </p>
+                                                              <p className="text-center">
+                                                                  10.00
+                                                              </p>
+                                                          </div>
+                                                          <div>
+                                                              <p className="text-center">
+                                                                  <b>Tổng</b>
+                                                              </p>
+                                                              <p className="text-center">
+                                                                  29.60
+                                                              </p>
+                                                          </div>
+                                                      </div>
                                                   </div>
                                               </div>
                                           );

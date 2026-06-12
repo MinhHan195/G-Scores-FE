@@ -29,3 +29,19 @@
     table-layout: fixed;
     border-collapse: collapse;
 }
+
+.list_scores{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 10px;
+}
+
+@media (max-width: 991.98px) {
+   .list_scores div{
+        flex: 0 0 33.33%;
+    }
+}
+
